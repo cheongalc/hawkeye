@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Hawkeye",
+    "description": "Chrome Extension that allows you to view all your speaker notes in Google Slides at one go and edit them to gain a top-level view of your entire script",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Hawkeye"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"]
+    }],
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "web_accessible_resources": ["popup.html"]
+}
